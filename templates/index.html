@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <!-- <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"> -->
+      
+        <title>
+                {{title}} - Please Read
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Orders to be fulfilled
+            </h1>         
+        </header>
+        <div>
+            <nav>
+                <a href="/shop/rope">
+                    Rope
+                </a>
+                <a href="/shop/quickdraw">
+                    Quickdraws
+                </a>
+            </nav>
+        </div>
+        <section>
+            {%for orders in order%}
+            <p>
+                <a href="/shop/{{orders.order_number-1}}">{{orders.customer_name}}</a>
+                <b></b> placed on {{orders.order_date}}<br>
+                <b>Quantity: </b>{{orders.quantity}} of {{orders.order_name}}<br>
+                <b>Address to send: </b>{{orders.address}}
+            </p>
+            {% endfor%}
+        </section>
+        
+
+
+
+    </body>
+</html>
